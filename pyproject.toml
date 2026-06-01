@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "termdash"
+version = "0.1.0"
+description = "A local-first terminal dashboard for weather, system stats, markets, schedule context, GitHub activity, and daily motivation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Jonathan Zing" }
+]
+keywords = ["terminal", "dashboard", "tui", "rich", "cli", "developer-tools"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Utilities"
+]
+dependencies = [
+  "rich>=13.7.0",
+  "requests>=2.31.0",
+  "psutil>=5.9.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/jzsinner/TermDash"
+Repository = "https://github.com/jzsinner/TermDash"
+Issues = "https://github.com/jzsinner/TermDash/issues"
+
+[project.scripts]
+termdash = "termdash.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["termdash*"]

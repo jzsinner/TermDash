@@ -1,17 +1,10 @@
 #!/usr/bin/env python3
-"""
-Terminal Dashboard for Your Daily Life
-Vibe: Cyberpunk sysadmin
-Author: GitHub Copilot Vibe Edition
-"""
+"""Terminal Dashboard for Your Daily Life."""
 
 import json
-import os
-import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Optional
 
 import requests
 from rich.console import Console
@@ -309,8 +302,9 @@ def main():
                 import time
                 time.sleep(CONFIG['update_interval_seconds'])
                 
-        except KeyboardInterrupt:
-            console.print("\n[bold yellow]👋 Dashboard stopped. Stay productive![/bold yellow]")
+except KeyboardInterrupt:
+    console.print("\n[bold yellow] Dashboard stopped.
+Stay productive![/bold yellow]")
 
 if __name__ == "__main__":
     try:
