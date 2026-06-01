@@ -106,6 +106,7 @@ termdash
 ## Documentation
 
 - [Architecture](docs/architecture.md)
+- [Configuration](docs/configuration.md)
 - [Contributing](CONTRIBUTING.md)
 - [Security policy](SECURITY.md)
 
@@ -127,7 +128,7 @@ The project priorities are:
 
 Near-term work:
 
-- Expand configuration options
+- Expand configuration options and validation
 - Add tests for core data providers
 - Improve API error handling
 - Add GitHub Actions CI
