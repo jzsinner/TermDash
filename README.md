@@ -103,6 +103,12 @@ Run the app:
 termdash
 ```
 
+## Documentation
+
+- [Architecture](docs/architecture.md)
+- [Contributing](CONTRIBUTING.md)
+- [Security policy](SECURITY.md)
+
 ## Project goals
 
 TermDash is intended to become a lightweight, local-first terminal dashboard that can be customized for different developer workflows.
