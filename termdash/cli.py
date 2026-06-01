@@ -5,6 +5,7 @@ import json
 import sys
 from datetime import datetime
 from pathlib import Path
+from dataclasses import replace
 
 import requests
 from rich.console import Console
@@ -243,6 +244,41 @@ def render_quote() -> Panel:
     return Panel(quote, title="🌟 Daily Motivation", border_style="bright_white")
 
 # ========== MAIN LOOP ==========
+
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    """Parse command-line arguments."""
+    parser = argparse.ArgumentParser(
+        prog="termdash",
+        description="Run the TermDash terminal dashboard.",
+    )
+    parser.add_argument(
+        "--config",
+        type=Path,
+        default=None,
+        help="Path to a TermDash JSON config file. Defaults to ~/.termdash.json.",
+    )
+    parser.add_argument(
+        "--refresh-seconds",
+        type=int,
+        default=None,
+        help="Override the dashboard refresh interval in seconds.",
+    )
+    return parser.parse_args(argv)
+
+
+def apply_cli_overrides(
+    config: TermDashConfig,
+    args: argparse.Namespace,
+) -> TermDashConfig:
+    """Apply command-line overrides to loaded configuration."""
+    if args.refresh_seconds is not None:
+        if args.refresh_seconds <= 0:
+            raise ValueError("Command-line value '--refresh-seconds' must be greater than zero")
+
+        config = replace(config, refresh_seconds=args.refresh_seconds)
+
+    return config
+
 def main():
     console.clear()
     console.print("[bold green]🚀 Launching Vibe Dashboard...[/bold green]")
