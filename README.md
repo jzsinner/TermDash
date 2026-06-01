@@ -1,37 +1,132 @@
-# 🌟 Terminal Dashboard for Your Daily Life
+# TermDash
 
-![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20WSL-lightgrey.svg)
-![Vibe](https://img.shields.io/badge/vibe-cyberpunk%20sysadmin-ff69b4.svg)
+A local-first terminal dashboard for developers and power users.
 
-> **One terminal command. All your life's metrics. Beautifully displayed.**
+TermDash displays useful daily context in a live-updating terminal interface, including system stats, weather, market data, crypto prices, top processes, and daily motivation.
 
-A real-time, live-updating terminal dashboard that shows you **weather, system stats, stocks, crypto, top processes, schedule, GitHub activity, and daily motivation** — all in one gorgeous, hacker-style interface.
+> Status: early alpha. APIs, integrations, configuration, packaging, and tests are still being hardened.
 
-![Dashboard Demo](https://via.placeholder.com/800x400?text=Terminal+Dashboard+GIF+Here)
-> *Replace with your actual terminal recording GIF*
+## Features
 
----
+| Feature | Status | Notes |
+|---|---:|---|
+| System stats | Implemented | CPU, memory, and disk usage |
+| Top processes | Implemented | Shows high-CPU local processes |
+| Weather | Implemented | Uses a public weather endpoint |
+| Stocks | Implemented | Basic market data support |
+| Crypto | Implemented | Basic crypto price support |
+| Motivation quote | Implemented | Remote quote API with fallback |
+| Auto-refresh | Implemented | Live terminal updates |
+| Configuration | Planned | User-editable config file |
+| GitHub activity | Planned | Future GitHub API integration |
+| Calendar / schedule | Planned | Future calendar integration |
+| Plugin architecture | Planned | Future extension model |
 
-## ✨ Features
+## Demo
 
-| Category | What You Get |
-|----------|---------------|
-| 🌤️ **Weather** | Current conditions + temperature (no API key required) |
-| 💻 **System** | CPU, RAM, Disk usage in real-time |
-| 📈 **Stocks** | Live prices for your favorite tickers |
-| 🪙 **Crypto** | Bitcoin, Ethereum, and more from CoinGecko |
-| ⚙️ **Processes** | Top 5 CPU-hungry processes |
-| 📅 **Schedule** | Daily agenda (extendable to Google Calendar) |
-| 🐙 **GitHub** | Recent activity stream |
-| 💬 **Motivation** | Random quotes from ZenQuotes API + local fallback |
-| 🔄 **Auto-refresh** | Updates every 10 seconds (configurable) |
+A terminal recording will be added after the first packaged release.
 
----
+## Requirements
 
-## 🚀 Quick Start (30 seconds)
+- Python 3.10 or newer
+- macOS, Linux, or WSL
+- Terminal with Unicode support
 
-### 1. Install dependencies
+## Installation
+
+### Install from source
+
+Clone the repository:
+
 ```bash
-pip install rich requests psutil# TermDash
+git clone https://github.com/jzsinner/TermDash.git
+cd TermDash
+```
+
+Install in editable mode:
+
+```bash
+python3 -m pip install -e .
+```
+
+Run TermDash:
+
+```bash
+termdash
+```
+
+Stop the dashboard with:
+
+```text
+Ctrl+C
+```
+
+## Development setup
+
+Create and activate a virtual environment:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Install the project:
+
+```bash
+python3 -m pip install -e .
+```
+
+Run the app:
+
+```bash
+termdash
+```
+
+## Project goals
+
+TermDash is intended to become a lightweight, local-first terminal dashboard that can be customized for different developer workflows.
+
+The project priorities are:
+
+- Keep setup simple
+- Avoid unnecessary dependencies
+- Prefer local-first behavior
+- Make API integrations optional
+- Handle network failures cleanly
+- Support configuration without requiring code changes
+- Build toward a plugin-friendly architecture
+
+## Roadmap
+
+Near-term work:
+
+- Add a real configuration file
+- Add tests for core data providers
+- Improve API error handling
+- Add GitHub Actions CI
+- Add a screenshot or terminal demo GIF
+- Publish a `v0.1.0` GitHub release
+
+Later work:
+
+- GitHub activity integration
+- Calendar integration
+- Theme support
+- Plugin architecture
+- PyPI publishing
+
+## Contributing
+
+Contributions are welcome, especially around tests, configuration, documentation, terminal UI improvements, and API integration cleanup.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+## Security
+
+Do not commit API keys, credentials, tokens, or private configuration files.
+
+See [SECURITY.md](SECURITY.md) for vulnerability reporting guidance.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
