@@ -107,6 +107,7 @@ termdash
 
 - [Architecture](docs/architecture.md)
 - [Configuration](docs/configuration.md)
+- [Release process](docs/release.md)
 - [Contributing](CONTRIBUTING.md)
 - [Security policy](SECURITY.md)
 
