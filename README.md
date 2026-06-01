@@ -61,6 +61,27 @@ Stop the dashboard with:
 Ctrl+C
 ```
 
+## Configuration
+
+TermDash looks for an optional local configuration file at:
+
+```text
+~/.termdash.json
+```
+
+Example:
+
+```json
+{
+  "location": "San Francisco",
+  "stock_symbols": ["AAPL", "GOOGL", "MSFT", "TSLA"],
+  "crypto_ids": ["bitcoin", "ethereum"],
+  "refresh_seconds": 30
+}
+```
+
+If no config file exists, TermDash uses built-in defaults.
+
 ## Development setup
 
 Create and activate a virtual environment:
@@ -100,7 +121,7 @@ The project priorities are:
 
 Near-term work:
 
-- Add a real configuration file
+- Expand configuration options
 - Add tests for core data providers
 - Improve API error handling
 - Add GitHub Actions CI
