@@ -24,7 +24,7 @@ TermDash displays useful daily context in a live-updating terminal interface, in
 
 ## Demo
 
-A terminal recording will be added after the first packaged release.
+![TermDash terminal demo](https://raw.githubusercontent.com/owner/termdash/main/docs/demo.gif)
 
 ## Requirements
 
